@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre_Producto</td>
+			<td>Costo_de_fabrica</td>
+			<td>Proveedor</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		
+		{% for producto in object_list %}
+		
+        <tr>
+			<td>{{ producto.id }}</td>
+			<td>{{ producto.nombrepro }}</td>
+			<td>{{ producto.costo }}</td>
+			<td>{{ producto.proveedor.nombre_Prove }}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'producto_editar' producto.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'producto_eliminar' producto.id %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros de productos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}

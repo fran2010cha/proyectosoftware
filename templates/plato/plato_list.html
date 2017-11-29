@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre_Plato</td>
+			<td>Precio</td>
+			<td>Producto</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		
+		{% for plato in object_list %}
+		
+        <tr>
+			<td>{{ plato.id }}</td>
+			<td>{{ plato.nombre_plato }}</td>
+			<td>{{ plato.precio }}</td>
+			<td><br/>{% for producto in plato.producto.all %}{{ producto }}<br/>{% endfor %}
+			</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'plato_editar' plato.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'plato_eliminar' plato.id %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros de platos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}
