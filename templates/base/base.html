@@ -25,24 +25,31 @@
                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                          <ul class="nav navbar-nav">
                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Empleados<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                               <li><a href="{% url 'empleado_listar' %}">Gestionar Empleado</a></li>
+                               <li><a href="{% url 'empleado_crear' %}">Agregar Empleado</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Platos <span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                               <li><a href="#">Registrar</a></li>
-                               <li><a href="#">Listar</a></li>
+                               <li><a href="{% url 'plato_listar' %}">Gestionar PLato</a></li>
+                               <li><a href="{% url 'plato_crear' %}">Agregar PLato</a></li>
                               </ul>
                             </li>
                              <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos<span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#">Solicitar</a></li>
-                                 <li><a href="#">Listar solicitudes</a></li>
+                                 <li><a href="{% url 'producto_listar' %}">Gestionar Producto</a></li>
+                                 <li><a href="{% url 'producto_crear' %}">Agregar Producto</a></li>
                               </ul>
                              </li>
                               <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proveedores <span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                               <li><a href="#">Registrar</a></li>
-                               <li><a href="#">Listar</a></li>
+                               <li><a href="{% url 'proveedor_listar' %}">Gestionar Proveedores</a></li>
+                               <li><a href="{% url 'proveedor_crear' %}">Agregar Proveedores</a></li>
                               </ul>
                             </li>
                          </ul>

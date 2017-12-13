@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'apps.Plato',
     'apps.Proveedor',
     'apps.Usuario',
+    'apps.Empleado',
+       
 ]
 
 MIDDLEWARE = [

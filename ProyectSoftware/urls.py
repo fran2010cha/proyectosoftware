@@ -22,6 +22,7 @@ urlpatterns = [
 	url(r'^proveedor/', include('apps.Proveedor.urls')),
 	url(r'^producto/', include('apps.Producto.urls')),
 	url(r'^plato/', include('apps.Plato.urls')),
+    url(r'^empleado/', include('apps.Empleado.urls')),
     url(r'^usuario/', include('apps.Usuario.urls', namespace='usuario')),
     url(r'^$', login, {'template_name':'index.html'},name='login'),
     url(r'^logout/', logout_then_login, name='logout'),

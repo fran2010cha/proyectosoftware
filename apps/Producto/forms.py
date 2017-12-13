@@ -12,7 +12,7 @@ class ProductoForm(forms.ModelForm):
 			'proveedor',
 		]
 		labels = {
-			'nombrepro': 'Nombrepro',
+			'nombrepro': 'Nombre producto',
 			'costo' : 'costo',
 			'proveedor' : 'Proveedor',
 		}
