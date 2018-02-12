@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>{{ titulo }}</h1>
+{% if form %}
+<form method="POST" action="">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit">Registrar venta</button>
+</form>
+{% endif %}
+{% endblock %}

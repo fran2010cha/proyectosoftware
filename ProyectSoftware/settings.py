@@ -39,11 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'apps.Producto',
     'apps.Plato',
     'apps.Proveedor',
     'apps.Usuario',
     'apps.Empleado',
+    'apps.Registroventa',
+    'apps.Inventario',
+    'apps.Inventarioproducto',
        
 ]
 
@@ -110,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

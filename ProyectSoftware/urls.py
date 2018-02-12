@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import url ,include
 from django.contrib import admin
 from django.contrib.auth.views import login, logout_then_login, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
+from django.conf.urls import url
 
+
+    
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^proveedor/', include('apps.Proveedor.urls')),
@@ -24,7 +27,10 @@ urlpatterns = [
 	url(r'^plato/', include('apps.Plato.urls')),
     url(r'^empleado/', include('apps.Empleado.urls')),
     url(r'^usuario/', include('apps.Usuario.urls', namespace='usuario')),
-    url(r'^$', login, {'template_name':'index.html'},name='login'),
+    url(r'^inventario/', include('apps.Inventario.urls', namespace='inventario')),
+    url(r'^registroventa/', include('apps.Registroventa.urls', namespace='registroventa')),
+    url(r'^inventariopro/', include('apps.Inventarioproducto.urls', namespace='inventarioproducto')),
+    url(r'^accounts/login/', login, {'template_name':'index.html'},name='login'),
     url(r'^logout/', logout_then_login, name='logout'),
     url(r'^reset/password_reset', password_reset, 
         {'template_name':'registration/password_reset_form.html',
